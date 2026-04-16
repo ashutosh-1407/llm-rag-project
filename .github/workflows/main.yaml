@@ -1,0 +1,15 @@
+jobs:
+  build-and-run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build Docker Image
+        run: docker build -t ashu-mini-chat-gpt .
+
+      - name: Run Docker Container
+        env:
+          # This pulls from your GitHub Repository Secrets
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }} 
+        run: |
+          docker run -e OPENAI_API_KEY=$OPENAI_API_KEY ashu-mini-chat-gpt
