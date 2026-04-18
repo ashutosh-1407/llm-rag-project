@@ -1,13 +1,12 @@
-from dotenv import load_dotenv
 from openai import OpenAI
 from src.tools.registry import tools, TOOL_MAP
 from src.utils.constants import OPENAI_MODEL_NAME
 from src.utils.helper import logger
+from src.memory.memory_store import get_history, append_turn
 import os
 
 
-load_dotenv()
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 
 # simple in-memory session store
 SESSIONS = {}
@@ -40,9 +39,7 @@ def run_rule_based_agent(query, contexts, history):
 # llm decides if tools needs to be run
 def run_llm_agent(query, contexts, session_id: str = "default"):
     logger.info(f"Fetching history | session_id={session_id}")
-    if session_id not in SESSIONS:
-        SESSIONS[session_id] = []
-    history = SESSIONS[session_id]
+    history = get_history(session_id)
     history_text = "\n".join(
         f"User: {item['query']}\nAssistant: {item['answer']}"
         for item in history[-3:]
@@ -126,10 +123,7 @@ def run_llm_agent(query, contexts, session_id: str = "default"):
     if not answer:
         answer = "Sorry, I couldn't generate an answer"
     
-    history.append({
-        "query": query,
-        "answer": answer
-    })
+    append_turn(session_id, query, answer)
 
     metadata = {
         "route": route,

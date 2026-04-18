@@ -1,14 +1,92 @@
 [
   {
+    "question": "Can I get a refund?",
+    "expected_answer": "Customers may request a refund within 30 days of purchase.",
+    "expected_keywords": ["refund", "30 days"],
+    "expected_chunk_substring": "Customers may request a refund within 30 days of purchase."
+  },
+  {
     "question": "Can I return a laptop?",
-    "expected_answer": "No, laptops are non-refundable.",
+    "expected_answer": "No, electronics such as laptops are non-refundable.",
     "expected_keywords": ["laptop", "non-refundable", "electronics"],
-    "expected_chunk_substring": "Electronics such as laptops and phones are non-refundable."
+    "expected_chunk_substring": "Electronics such as laptops, phones, and tablets are non-refundable."
+  },
+  {
+    "question": "How long does refund processing take?",
+    "expected_answer": "Refunds will be processed within 5-7 business days after approval.",
+    "expected_keywords": ["5-7 business days", "refund"],
+    "expected_chunk_substring": "Refunds will be processed within 5-7 business days after approval."
   },
   {
     "question": "How long does shipping take in the US?",
     "expected_answer": "Shipping typically takes 5-7 business days within the United States.",
     "expected_keywords": ["5-7 business days", "United States", "shipping"],
     "expected_chunk_substring": "Shipping typically takes 5-7 business days within the United States."
+  },
+  {
+    "question": "How long does international shipping take?",
+    "expected_answer": "International shipping may take 10-15 business days.",
+    "expected_keywords": ["10-15 business days", "international"],
+    "expected_chunk_substring": "International shipping may take 10-15 business days."
+  },
+  {
+    "question": "How can customers contact support?",
+    "expected_answer": "Customers can contact support via email or phone.",
+    "expected_keywords": ["email", "phone", "support"],
+    "expected_chunk_substring": "Customers can contact support via email or phone."
+  },
+  {
+    "question": "What are support hours?",
+    "expected_answer": "Support hours are Monday to Friday, 9 AM to 6 PM.",
+    "expected_keywords": ["Monday", "Friday", "9 AM", "6 PM"],
+    "expected_chunk_substring": "Support hours are Monday to Friday, 9 AM to 6 PM."
+  },
+  {
+    "question": "How fast does support respond?",
+    "expected_answer": "We aim to respond within 24 hours.",
+    "expected_keywords": ["24 hours", "respond"],
+    "expected_chunk_substring": "We aim to respond within 24 hours."
+  },
+  {
+    "question": "Are discounts always available?",
+    "expected_answer": "Discounts are available during major holidays such as Christmas and Black Friday.",
+    "expected_keywords": ["holidays", "Christmas", "Black Friday"],
+    "expected_chunk_substring": "Discounts are available during major holidays such as Christmas and Black Friday."
+  },
+  {
+    "question": "When should promotional codes be used?",
+    "expected_answer": "Promotional codes must be applied at checkout.",
+    "expected_keywords": ["checkout", "promotional codes"],
+    "expected_chunk_substring": "Promotional codes must be applied at checkout."
+  },
+  {
+    "question": "Can users change their profile information?",
+    "expected_answer": "Users can update their profile information anytime.",
+    "expected_keywords": ["profile", "update", "anytime"],
+    "expected_chunk_substring": "Users can update their profile information anytime."
+  },
+  {
+    "question": "What happens if I do not use my account for a year?",
+    "expected_answer": "Accounts inactive for more than 1 year may be deactivated.",
+    "expected_keywords": ["inactive", "1 year", "deactivated"],
+    "expected_chunk_substring": "Accounts inactive for more than 1 year may be deactivated."
+  },
+  {
+    "question": "Should passwords be shared?",
+    "expected_answer": "Passwords should be kept secure and not shared.",
+    "expected_keywords": ["passwords", "secure", "not shared"],
+    "expected_chunk_substring": "Passwords should be kept secure and not shared."
+  },
+  {
+    "question": "I bought a phone, can I return it?",
+    "expected_answer": "No, phones are non-refundable because electronics are non-refundable.",
+    "expected_keywords": ["phone", "electronics", "non-refundable"],
+    "expected_chunk_substring": "Electronics such as laptops, phones, and tablets are non-refundable."
+  },
+  {
+    "question": "I need support and also want to know when they reply.",
+    "expected_answer": "Customers can contact support via email or phone, and support aims to respond within 24 hours.",
+    "expected_keywords": ["email", "phone", "24 hours"],
+    "expected_chunk_substring": "Customers can contact support via email or phone."
   }
 ]

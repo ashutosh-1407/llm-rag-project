@@ -1,3 +1,6 @@
+from dotenv import load_dotenv
+load_dotenv()
+
 from fastapi import FastAPI
 from src.llm.generator import run_rule_based_agent, run_llm_agent
 from src.agent.agent import agent_decide

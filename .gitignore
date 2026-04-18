@@ -1,3 +1,6 @@
 .env
 __pycache__
-embeddings.pkl
+*.pyc
+.ipynb_checkpoints
+venv
+.venv
