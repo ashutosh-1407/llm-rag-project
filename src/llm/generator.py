@@ -39,7 +39,7 @@ def run_rule_based_agent(query, contexts, history):
 
 # llm decides if tools needs to be run
 def run_llm_agent(query, contexts, session_id: str = "default"):
-    logger.info(f"Fetching history for session_id: {session_id}")
+    logger.info(f"Fetching history | session_id={session_id}")
     if session_id not in SESSIONS:
         SESSIONS[session_id] = []
     history = SESSIONS[session_id]
@@ -48,7 +48,7 @@ def run_llm_agent(query, contexts, session_id: str = "default"):
         for item in history[-3:]
     )
     if history != []:
-        logger.info(f"Found history, here's the history text: {history_text}")
+        logger.info(f"Found history | history text={history_text}")
     else:
         logger.info("No history found.")
 
@@ -73,7 +73,7 @@ def run_llm_agent(query, contexts, session_id: str = "default"):
         {"role": "user", "content": query}
     ]
 
-    logger.info(f"Running llm based agent with tools (if needed) for the query: {query} and session_id: {session_id}")
+    logger.info(f"Running llm based agent with tools | query={query} | session_id={session_id}")
 
     # Step 1 - Ask LLM - it may call a tool
     response = client.chat.completions.create(

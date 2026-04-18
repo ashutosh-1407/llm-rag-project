@@ -1,0 +1,14 @@
+[
+  {
+    "question": "Can I return a laptop?",
+    "expected_answer": "No, laptops are non-refundable.",
+    "expected_keywords": ["laptop", "non-refundable", "electronics"],
+    "expected_chunk_substring": "Electronics such as laptops and phones are non-refundable."
+  },
+  {
+    "question": "How long does shipping take in the US?",
+    "expected_answer": "Shipping typically takes 5-7 business days within the United States.",
+    "expected_keywords": ["5-7 business days", "United States", "shipping"],
+    "expected_chunk_substring": "Shipping typically takes 5-7 business days within the United States."
+  }
+]

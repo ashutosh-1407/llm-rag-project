@@ -1,23 +1,17 @@
 from fastapi import FastAPI
-from src.rag.loader import load_pdf
-from src.rag.chunker import chunk_text
-from src.rag.retriever import Retriever
 from src.llm.generator import run_rule_based_agent, run_llm_agent
 from src.agent.agent import agent_decide
 from src.tools.registry import TOOL_MAP
 from src.utils.helper import rerank, logger
-from pathlib import Path
+from src.observability.metrics import get_metrics as fetch_metrics
+from src.rag.retriever_store import get_retriever
 import time
 
 
 app = FastAPI()
 
 # load once at startup
-parent_dir = Path(__file__).resolve().parent.parent
-data_path = parent_dir / "data/company_policy.pdf"
-document = load_pdf(data_path)
-chunks = chunk_text(document)
-retriever = Retriever(chunks)
+retriever = get_retriever()
 
 @app.get("/")
 def get_welcome_page():
@@ -26,6 +20,10 @@ def get_welcome_page():
 @app.get("/health")
 def health():
     return {"status": "ok"}
+
+@app.get("/metrics")
+def get_metrics():
+    return fetch_metrics()
 
 @app.get("/ask_rule_based_agent")
 def ask_rule_based_agent(query: str):
