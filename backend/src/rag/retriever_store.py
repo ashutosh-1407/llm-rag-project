@@ -1,6 +1,6 @@
-from src.rag.loader import load_pdf
-from src.rag.chunker import chunk_text
-from src.rag.retriever import Retriever
+from backend.src.rag.loader import load_pdf
+from backend.src.rag.chunker import chunk_text
+from backend.src.rag.retriever import Retriever
 from pathlib import Path
 
 

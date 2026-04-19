@@ -4,7 +4,7 @@ from evaluation.evaluator import (
     retrieval_hit_at_k,
     load_dataset
 )
-from src.agent.agent import run_agent_with_debug
+from backend.src.agent.agent import run_agent_with_debug
 
 
 def main():

@@ -1,9 +1,9 @@
-from src.rag.retriever_store import get_retriever
-from src.llm.generator import generate_completion
-from src.tools.tools import TOOL_MAP
-from src.tools.registry import tools
-from src.utils.helper import logger, rerank
-from src.memory.memory_store import get_history, append_turn
+from backend.src.rag.retriever_store import get_retriever
+from backend.src.llm.generator import generate_completion
+from backend.src.tools.tools import TOOL_MAP
+from backend.src.tools.registry import tools
+from backend.src.utils.helper import logger, rerank
+from backend.src.memory.memory_store import get_history, append_turn
 
 
 def agent_decide(query):

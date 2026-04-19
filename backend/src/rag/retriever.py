@@ -1,7 +1,7 @@
 # from sentence_transformers import SentenceTransformer
-from src.utils.constants import CACHE_PATH
-from src.utils.helper import logger
-from src.rag.embedder import embed_text
+from backend.src.utils.constants import CACHE_PATH
+from backend.src.utils.helper import logger
+from backend.src.rag.embedder import embed_text
 import faiss
 import os
 import pickle

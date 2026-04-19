@@ -9,8 +9,6 @@ COPY requirements.txt .
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . .
+COPY . ./ui
 
-ENV PORT=10000
-
-CMD ["sh", "-c", "uvicorn src.main:app --host 0.0.0.0 --port $PORT"]
+CMD ["streamlit", "run", "ui/streamlit_app.py", "--server.port", "8001", "--server.address", "0.0.0.0"]

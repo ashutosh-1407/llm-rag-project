@@ -8,7 +8,7 @@ query = st.text_input("Ask a question:")
 
 if st.button("Ask") and query:
     response = requests.get(
-        "http://127.0.0.1:8000/ask_llm?query=" + query
+        "http://backend:8000/ask_llm_agent?query=" + query
     )
 
     data = response.json()

@@ -1,5 +1,5 @@
 from openai import OpenAI
-from src.utils.constants import EMBEDDER_MODEL
+from backend.src.utils.constants import EMBEDDER_MODEL
 import os
 import numpy as np
 

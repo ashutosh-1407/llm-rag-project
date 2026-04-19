@@ -1,4 +1,4 @@
-from src.observability.logger import setup_logger
+from backend.src.observability.logger import setup_logger
 
 
 logger = setup_logger()

@@ -1,5 +1,5 @@
 from openai import OpenAI
-from src.utils.constants import OPENAI_MODEL_NAME
+from backend.src.utils.constants import OPENAI_MODEL_NAME
 import os
 
 

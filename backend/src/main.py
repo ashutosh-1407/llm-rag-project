@@ -2,9 +2,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 from fastapi import FastAPI
-from src.agent.agent import rule_based_agent, llm_agent
-from src.utils.helper import logger
-from src.observability.metrics import get_metrics as fetch_metrics
+from backend.src.agent.agent import rule_based_agent, llm_agent
+from backend.src.utils.helper import logger
+from backend.src.observability.metrics import get_metrics as fetch_metrics
 import time
 
 
