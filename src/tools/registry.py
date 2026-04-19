@@ -1,6 +1,3 @@
-from src.tools.tools import summarize_doc, get_support_info
-
-
 tools = [
     {
         "type": "function",
@@ -19,8 +16,3 @@ tools = [
         }
     }
 ]
-
-TOOL_MAP = {
-    "summarize_doc": summarize_doc,
-    "get_support_info": get_support_info
-}

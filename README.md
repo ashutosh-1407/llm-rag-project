@@ -191,9 +191,12 @@ Swagger UI:
 http://127.0.0.1:8000/docs
 ```
 
+Docker:
+
+Make sure to create a .env in the root folder
 ```text
 docker build -t llm-rag-agent .
-docker -> docker run --env-file .env -p 10000:10000 llm-rag-agent
+docker run --env-file .env -p 10000:10000 llm-rag-agent
 ```
 
 ---
